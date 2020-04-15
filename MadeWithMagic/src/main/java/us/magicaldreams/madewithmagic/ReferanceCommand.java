@@ -17,7 +17,7 @@ public class ReferanceCommand implements CommandExecutor {
         if(sender instanceof Player) {
 
 
-            Main.applyFastPassUI((Player) sender);
+            Main.applyMadeWithMagicUI((Player) sender);
             ((Player) sender).playSound(((OfflinePlayer) sender).getPlayer().getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE, 2.0F, 1.0F);
         }else {
             System.out.println("Cannot Use in Console!");

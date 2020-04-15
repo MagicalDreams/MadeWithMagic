@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static org.bukkit.Material.*;
+
 public class Main extends JavaPlugin {
 
     @Override
@@ -27,14 +29,14 @@ public class Main extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new hatsCommand(this), this);
 
-        getCommand("hats").setExecutor(new ReferanceCommand());
+        getCommand("caps").setExecutor(new ReferanceCommand());
 
 
     }
 
-        public static void applyFastPassUI(Player player) {
+        public static void applyMadeWithMagicUI(Player player) {
 
-                // Elytra HashMap
+                // Hats HashMap
          HashMap <Player, Material> chestSlot = new HashMap<>();
 
 
@@ -42,62 +44,66 @@ public class Main extends JavaPlugin {
 
 
                 //Beginning
-                Inventory fastPassGUI = Bukkit.createInventory(null, 9, ChatColor.RED + "FastPass");
+                Inventory MadeWithMagicGUI = Bukkit.createInventory(null, 9, ChatColor.RED + "Caps");
 
                 //Lores
+            List<String> capsenableLore = new ArrayList<>();
+            capsenableLore.add(ChatColor.GRAY + "Enable's the use of others");
+            capsenableLore.add(ChatColor.GRAY + "To Change your Hat");
 
-                List<String> enableLore = new ArrayList<>();
-                enableLore.add(ChatColor.GRAY + "Click Me For the");
-                enableLore.add(ChatColor.GRAY + "Best time of your life!");
+            List<String> capsdisableLore = new ArrayList<>();
+            capsdisableLore.add(ChatColor.GRAY + "Disabled's the use of others");
+            capsdisableLore.add(ChatColor.GRAY + "To Change your Hat");
 
-                List<String> disableLore = new ArrayList<>();
-                disableLore.add(ChatColor.GRAY + "Click Me For the");
-                disableLore.add(ChatColor.GRAY + "Worst time of your life!");
-
-
-                List<String> launchLore = new ArrayList<>();
-                launchLore.add(ChatColor.GRAY + "Click To be Launched!");
-
-                launchLore.add(ChatColor.GRAY + "up in the air by 200 Blocks!! :D");
-
-                List<String> warpTNTLore = new ArrayList<>();
-                warpTNTLore.add(ChatColor.BOLD + "Warps to TNT");
 
                 //ItemStacks
-                ItemStack FastPass;
-                ItemMeta fastPassMeta;
+                ItemStack MadeWithMagic;
+                ItemMeta MadeWithMagicMeta;
                 if (player.getInventory().getHolder().getType() != null
                         && player.getInventory().getHolder().equals(null)) {
 
-                    FastPass = new ItemStack(Material.REDSTONE_BLOCK);
 
-                    fastPassMeta = FastPass.getItemMeta();
-                    fastPassMeta.setDisplayName(ChatColor.RED + "Disable FastPass");
+                 //   fastPassMeta = FastPass.getItemMeta();
 
-                    fastPassMeta.setLore(disableLore);
+                   // fastPassMeta.setLore(disableLore);
 
                 } else {
-                    FastPass = new ItemStack(Material.EMERALD_BLOCK);
 
-                    fastPassMeta = FastPass.getItemMeta();
-                    fastPassMeta.setDisplayName(ChatColor.GREEN + "Enable FastPass");
+               //     fastPassMeta = FastPass.getItemMeta();
 
-                    fastPassMeta.setLore(enableLore);
+
+               //     fastPassMeta.setLore(enableLore);
 
 
                 }
-                FastPass.setItemMeta(fastPassMeta);
+           //     FastPass.setItemMeta(fastPassMeta);
 
 
 
                 //ItemSettings
 
+            ItemStack StanedGlass = new ItemStack(GLASS_PANE, 1, DyeColor.RED.getDyeData());
+            ItemMeta StanedGlassMeta = StanedGlass.getItemMeta();
+            StanedGlassMeta.setDisplayName(ChatColor.GRAY + " ");
+            StanedGlass.setItemMeta(StanedGlassMeta);
 
 
 
-                //Final
 
-                player.openInventory(fastPassGUI);
+            MadeWithMagicGUI.setItem(0, StanedGlass);
+            MadeWithMagicGUI.setItem(1, StanedGlass);
+            MadeWithMagicGUI.setItem(2, StanedGlass);
+            MadeWithMagicGUI.setItem(3, StanedGlass);
+            MadeWithMagicGUI.setItem(4, StanedGlass);
+            MadeWithMagicGUI.setItem(5, StanedGlass);
+            MadeWithMagicGUI.setItem(6, StanedGlass);
+            MadeWithMagicGUI.setItem(7, StanedGlass);
+            MadeWithMagicGUI.setItem(8, StanedGlass);
+
+
+            //Final
+
+                player.openInventory(MadeWithMagicGUI);
 
             }
 

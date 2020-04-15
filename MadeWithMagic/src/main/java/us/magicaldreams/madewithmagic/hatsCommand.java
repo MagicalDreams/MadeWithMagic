@@ -23,7 +23,7 @@ public class hatsCommand implements Listener {
 
         Player player = (Player) e.getWhoClicked();
 
-        if(ChatColor.translateAlternateColorCodes('&', String.valueOf(e.getClickedInventory())).equals(ChatColor.RED + "hats")) {
+        if(ChatColor.translateAlternateColorCodes('&', String.valueOf(e.getClickedInventory())).equals(ChatColor.RED + "caps")) {
 
             if(e.getCurrentItem() != null) {
                 e.setCancelled(true);
