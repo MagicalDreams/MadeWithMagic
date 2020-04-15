@@ -1,0 +1,4 @@
+name: MadeWithMagic
+version: ${project.version}
+main: us.magicaldreams.madewithmagic.Main
+api-version: 1.13

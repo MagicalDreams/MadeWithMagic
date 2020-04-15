@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MadeWithMagic">
+    <output-path>$USER_HOME$/Desktop/MagicalDreams Server/plugins</output-path>
+    <root id="archive" name="MadeWithMagic.jar">
+      <element id="module-output" name="MadeWithMagic" />
+    </root>
+  </artifact>
+</component>

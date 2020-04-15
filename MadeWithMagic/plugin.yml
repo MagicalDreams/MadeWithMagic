@@ -1,3 +1,7 @@
-  name: MadeWithMagic
-    main: us.magicaldreams.madewithmagic.Main
-  version: 0.0.2
+name: MadeWithMagic
+main: us.magicaldreams.madewithmagic.Main
+version: 0.1.5
+description: MadeWithMagic- Hat Changer
+commands:
+  hats:
+

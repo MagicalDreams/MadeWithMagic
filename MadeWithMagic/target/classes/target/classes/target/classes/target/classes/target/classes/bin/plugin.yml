@@ -3,5 +3,6 @@ main: us.magicaldreams.madewithmagic.Main
 version: 0.1.5
 description: MadeWithMagic- Hat Changer
 commands:
-  hats:
+  sayhihi:
+    usage: /h
 
