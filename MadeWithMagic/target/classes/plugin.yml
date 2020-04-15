@@ -1,0 +1,4 @@
+name: MadeWithMagic
+version: 1.0-SNAPSHOT
+main: us.magicaldreams.madewithmagic.Main
+api-version: 1.13
