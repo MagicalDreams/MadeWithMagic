@@ -23,6 +23,9 @@ public class Main extends JavaPlugin{
 		getCommand("caps").setExecutor(new FastPassCommand(this));
 		
 		Bukkit.getPluginManager().registerEvents(new MenuListener(this), this);
+		
+		Bukkit.getPluginManager().registerEvents(new Caps(this), this);
+		
 	}
 	
 	public void applyFastPassUI(Player player) {
@@ -85,21 +88,32 @@ public class Main extends JavaPlugin{
 		@SuppressWarnings("deprecation")
 		ItemStack RedStainedGlass = new ItemStack(Material.STAINED_GLASS_PANE,1,  DyeColor.RED.getDyeData());
 		ItemMeta RedStainedGlassMeta = RedStainedGlass.getItemMeta();
-		RedStainedGlassMeta.setDisplayName(" ");
+		RedStainedGlassMeta.setDisplayName(ChatColor.BLUE + "Cap Change ->");
 		RedStainedGlass.setItemMeta(RedStainedGlassMeta);
+		
+		
+		ItemStack LEATHER_HELMET = new ItemStack(Material.LEATHER_HELMET, 1);
+		
+		ItemStack DIAMOND_HELMET = new ItemStack(Material.DIAMOND_HELMET, 1);
+		
+		ItemStack GOLD_HELMET = new ItemStack(Material.GOLD_HELMET, 1);
+		
+		ItemStack IRON_HELMET = new ItemStack(Material.IRON_HELMET, 1);
+		
+		ItemStack CHAINMAIL_HELMET = new ItemStack(Material.CHAINMAIL_HELMET, 1);
 		
 		
 		//ItemSettings
 		
 		fastPassGUI.setItem(0, caps);
-		fastPassGUI.setItem(1, RedStainedGlass);
+		fastPassGUI.setItem(1, ED);
 		fastPassGUI.setItem(2, StanedGlass);
 		fastPassGUI.setItem(3, RedStainedGlass);
-		fastPassGUI.setItem(4, ED);
-		fastPassGUI.setItem(5, RedStainedGlass);
-		fastPassGUI.setItem(6, StanedGlass);
-		fastPassGUI.setItem(7, RedStainedGlass);
-		fastPassGUI.setItem(8, StanedGlass);
+		fastPassGUI.setItem(4, LEATHER_HELMET);
+		fastPassGUI.setItem(5, DIAMOND_HELMET);
+		fastPassGUI.setItem(6, GOLD_HELMET);
+		fastPassGUI.setItem(7, IRON_HELMET);
+		fastPassGUI.setItem(8, CHAINMAIL_HELMET);
 
 		
 		

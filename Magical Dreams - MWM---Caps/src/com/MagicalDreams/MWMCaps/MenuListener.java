@@ -13,6 +13,7 @@ public class MenuListener implements Listener{
 	
 	private Main main;
 	
+	
 	public MenuListener(Main main) {
 		this.main = main;
 	}
@@ -33,6 +34,8 @@ public class MenuListener implements Listener{
 					
 					player.getInventory().setItemInHand((new ItemStack(Material.BONE, 1)));
 					
+					
+					
 					break;
 				case EMERALD_BLOCK:
 					
@@ -45,7 +48,29 @@ public class MenuListener implements Listener{
 						
 						player.sendMessage("Disabled Caps!");
 						
-						
+					break;
+				case LEATHER_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.LEATHER_HELMET, 1)));
+
+					
+					break;
+				case DIAMOND_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.DIAMOND_HELMET, 1)));
+
+					
+					break;
+				case GOLD_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.GOLD_HELMET, 1)));
+
+					
+					break;
+				case IRON_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.IRON_HELMET, 1)));
+
+					
+					break;
+				case CHAINMAIL_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.CHAINMAIL_HELMET, 1)));
 					
 			
 					break;
