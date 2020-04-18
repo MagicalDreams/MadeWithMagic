@@ -57,7 +57,7 @@ public class MenuListener implements Listener{
 					break;
 				case BED:
 						
-					player.sendMessage(ChatColor.BLUE + "Opening Cap Changer");
+				//	player.sendMessage(ChatColor.BLUE + "Opening Cap Changer");
 					main.applyChangerUI((Player) player);
 
 					
@@ -87,13 +87,14 @@ public class MenuListener implements Listener{
 					player.getInventory().setHelmet((new ItemStack(Material.LEATHER_HELMET, 1)));
 					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
 					player.closeInventory();
-
+					player.sendMessage(ChatColor.GRAY + "Changed Hat to: Cap");
 					
 					break;
 				case DIAMOND_HELMET:
 					player.getInventory().setHelmet((new ItemStack(Material.DIAMOND_HELMET, 1)));
 					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
 					player.closeInventory();
+					player.sendMessage(ChatColor.AQUA + "Changed Hat to: Sorcerer's Hat");
 
 					
 					break;
@@ -101,6 +102,7 @@ public class MenuListener implements Listener{
 					player.getInventory().setHelmet((new ItemStack(Material.GOLD_HELMET, 1)));
 					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
 					player.closeInventory();
+					player.sendMessage(ChatColor.GOLD + "Changed Hat to: Gold Helmet");
 
 					
 					break;
@@ -108,6 +110,7 @@ public class MenuListener implements Listener{
 					player.getInventory().setHelmet((new ItemStack(Material.IRON_HELMET, 1)));
 					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
 					player.closeInventory();
+					player.sendMessage(ChatColor.RED + "Changed Hat to: Jacks Hat");
 
 					
 					break;
@@ -115,6 +118,7 @@ public class MenuListener implements Listener{
 					player.getInventory().setHelmet((new ItemStack(Material.CHAINMAIL_HELMET, 1)));
 					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
 					player.closeInventory();
+					player.sendMessage(ChatColor.GOLD + "Changed Hat to: Crown");
 
 					
 				break;
