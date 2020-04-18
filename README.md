@@ -10,7 +10,7 @@ MagicalDreams Hats “Made With Magic” plug-in
 
 MIT License
 
-Copyright (c) 2020 Nolan Trapp
+Copyright © 2020 Nolan Trapp
 
 Only Current Active Licence is for: © 2013-2020 MagicalDreams Server, and Nolant108(and required users)
 
