@@ -57,16 +57,10 @@ public class Main extends JavaPlugin{
 		ItemStack ED;
 		ItemMeta EDMeta;
 		if(player.getInventory().getHolder().getType() != null
-				&& player.getInventory().getHolder().equals(null)) {
+				&& player.getInventory().getHolder().equals(Material.EMERALD_BLOCK)) {
 			
-			ED = new ItemStack(Material.REDSTONE_BLOCK);
+
 			
-			EDMeta = ED.getItemMeta();
-			EDMeta.setDisplayName(ChatColor.RED + "Disable Caps");
-			
-			EDMeta.setLore(disableLore);
-			
-		} else {
 			ED = new ItemStack(Material.EMERALD_BLOCK);
 			
 			EDMeta = ED.getItemMeta();
@@ -74,6 +68,15 @@ public class Main extends JavaPlugin{
 			
 			EDMeta.setLore(enableLore);
 
+			
+		} else {
+
+			ED = new ItemStack(Material.REDSTONE_BLOCK);
+
+			EDMeta = ED.getItemMeta();
+			EDMeta.setDisplayName(ChatColor.RED + "Disable Caps");
+			
+			EDMeta.setLore(disableLore);
 
 		}
 		ED.setItemMeta(EDMeta);
