@@ -3,9 +3,12 @@ MagicalDreams Hats “Made With Magic” plug-in
 
 -This is a in Dev plugin for the Minecraft Server "Magical Dreams"(Creating Walts Dream) which is currently going through referbishment.
 
+
 MIT License
 
 Copyright (c) 2020 Nolan Trapp
+
+Only Current Active Licence is for: © 2013-2020 MagicalDreams Server, and Nolant108(and required users)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
