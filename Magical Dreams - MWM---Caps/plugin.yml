@@ -1,0 +1,6 @@
+name: MDCaps
+version: 0.1.0
+main: com.MagicalDreams.MWMCaps.Main
+api-version: 1.14
+commands:
+  caps:
