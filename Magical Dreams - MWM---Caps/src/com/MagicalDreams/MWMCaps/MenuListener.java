@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
-
+ 
 public class MenuListener implements Listener{
 	
 	private Main main;
@@ -17,6 +17,7 @@ public class MenuListener implements Listener{
 		this.main = main;
 	}
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onClick(InventoryClickEvent e) {
 		

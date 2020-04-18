@@ -33,12 +33,10 @@ public class Main extends JavaPlugin{
 		//Lores
 		
 		List<String> enableLore = new ArrayList<>();
-		enableLore.add(ChatColor.GRAY + "Click Me For the");
-		enableLore.add(ChatColor.GRAY + "Best time of your life!");
+		enableLore.add(ChatColor.GRAY + "Click Me to Enable Caps");
 		
 		List<String> disableLore = new ArrayList<>();
-		disableLore.add(ChatColor.GRAY + "Click Me For the");
-		disableLore.add(ChatColor.GRAY + "Worst time of your life!");
+		disableLore.add(ChatColor.GRAY + "Click Me to Disable Caps");
 		
 		
 		List<String> CapsLore = new ArrayList<>();
@@ -47,29 +45,29 @@ public class Main extends JavaPlugin{
 		
 		
 		//ItemStacks
-		ItemStack FastPass;
-		ItemMeta fastPassMeta;
+		ItemStack ED;
+		ItemMeta EDMeta;
 		if(player.getInventory().getHolder().getType() != null
 				&& player.getInventory().getHolder().equals(null)) {
 			
-			FastPass = new ItemStack(Material.REDSTONE_BLOCK);
+			ED = new ItemStack(Material.REDSTONE_BLOCK);
 			
-			fastPassMeta = FastPass.getItemMeta();
-			fastPassMeta.setDisplayName(ChatColor.RED + "Disable Caps");
+			EDMeta = ED.getItemMeta();
+			EDMeta.setDisplayName(ChatColor.RED + "Disable Caps");
 			
-			fastPassMeta.setLore(disableLore);
+			EDMeta.setLore(disableLore);
 			
 		} else {
-			FastPass = new ItemStack(Material.EMERALD_BLOCK);
+			ED = new ItemStack(Material.EMERALD_BLOCK);
 			
-			fastPassMeta = FastPass.getItemMeta();
-			fastPassMeta.setDisplayName(ChatColor.GREEN + "Enable Caps");
+			EDMeta = ED.getItemMeta();
+			EDMeta.setDisplayName(ChatColor.GREEN + "Enable Caps");
 			
-			fastPassMeta.setLore(enableLore);
+			EDMeta.setLore(enableLore);
 
 
 		}
-		FastPass.setItemMeta(fastPassMeta);
+		ED.setItemMeta(EDMeta);
 		
 		ItemStack caps = new ItemStack(Material.BONE);
 		ItemMeta capsMeta = caps.getItemMeta();
@@ -97,7 +95,7 @@ public class Main extends JavaPlugin{
 		fastPassGUI.setItem(1, RedStainedGlass);
 		fastPassGUI.setItem(2, StanedGlass);
 		fastPassGUI.setItem(3, RedStainedGlass);
-		fastPassGUI.setItem(4, FastPass);
+		fastPassGUI.setItem(4, ED);
 		fastPassGUI.setItem(5, RedStainedGlass);
 		fastPassGUI.setItem(6, StanedGlass);
 		fastPassGUI.setItem(7, RedStainedGlass);
