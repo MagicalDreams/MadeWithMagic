@@ -1,6 +1,8 @@
 # MadeWithMagic
 MagicalDreams Hats “Made With Magic” plug-in
 
+-This is a in Dev plugin for the Minecraft Server "Magical Dreams"(Creating Walts Dream) which is currently going through referbishment.
+
 MIT License
 
 Copyright (c) 2020 Nolan Trapp
