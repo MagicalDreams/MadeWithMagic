@@ -2,16 +2,19 @@ package com.MagicalDreams.MWMCaps;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
  
 public class MenuListener implements Listener{
 	
-	private Main main;
+	public Main main;
 	
 	
 	public MenuListener(Main main) {
@@ -34,44 +37,33 @@ public class MenuListener implements Listener{
 					
 					player.getInventory().setItemInHand((new ItemStack(Material.BONE, 1)));
 					
-					
+					player.closeInventory();
+
 					
 					break;
 				case EMERALD_BLOCK:
 					
 						
 						player.sendMessage("Enabled Caps!");
+						player.closeInventory();
 
 					break;
 				case REDSTONE_BLOCK:
 			
 						
 						player.sendMessage("Disabled Caps!");
+						player.closeInventory();
+
+					break;
+				case BED:
 						
-					break;
-				case LEATHER_HELMET:
-					player.getInventory().setHelmet((new ItemStack(Material.LEATHER_HELMET, 1)));
+					player.sendMessage(ChatColor.BLUE + "Opening Cap Changer");
+					main.applyChangerUI((Player) player);
 
 					
-					break;
-				case DIAMOND_HELMET:
-					player.getInventory().setHelmet((new ItemStack(Material.DIAMOND_HELMET, 1)));
-
+			//		player.performCommand("capsOpener");
 					
-					break;
-				case GOLD_HELMET:
-					player.getInventory().setHelmet((new ItemStack(Material.GOLD_HELMET, 1)));
-
-					
-					break;
-				case IRON_HELMET:
-					player.getInventory().setHelmet((new ItemStack(Material.IRON_HELMET, 1)));
-
-					
-					break;
-				case CHAINMAIL_HELMET:
-					player.getInventory().setHelmet((new ItemStack(Material.CHAINMAIL_HELMET, 1)));
-					
+						
 			
 					break;
 				default:
@@ -81,13 +73,61 @@ public class MenuListener implements Listener{
 
 			}
 			
-			player.closeInventory();
+			
+		}
+		
+		
+		if(ChatColor.translateAlternateColorCodes('&', e.getClickedInventory().getTitle()).equals(ChatColor.BLUE + "Caps Changer")) {
+		
+			if(e.getCurrentItem() != null) {
+				e.setCancelled(true);
+				switch (e.getCurrentItem().getType()) {
+				
+				case LEATHER_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.LEATHER_HELMET, 1)));
+					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
+					player.closeInventory();
+
+					
+					break;
+				case DIAMOND_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.DIAMOND_HELMET, 1)));
+					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
+					player.closeInventory();
+
+					
+					break;
+				case GOLD_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.GOLD_HELMET, 1)));
+					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
+					player.closeInventory();
+
+					
+					break;
+				case IRON_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.IRON_HELMET, 1)));
+					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
+					player.closeInventory();
+
+					
+					break;
+				case CHAINMAIL_HELMET:
+					player.getInventory().setHelmet((new ItemStack(Material.CHAINMAIL_HELMET, 1)));
+					((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_CHIME, 2.0F, 1.0F);
+					player.closeInventory();
+
+					
+				break;
+			default:
+				return;
+				
+				}
 			
 		}
 
 		
 	}
 	
-
+	}
 
 }

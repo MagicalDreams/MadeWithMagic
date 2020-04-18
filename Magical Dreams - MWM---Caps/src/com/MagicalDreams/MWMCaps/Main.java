@@ -8,6 +8,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -22,16 +23,18 @@ public class Main extends JavaPlugin{
 		
 		getCommand("caps").setExecutor(new FastPassCommand(this));
 		
+	//	getCommand("capsOpener").setExecutor(new CapsOpenerCommand(this));
+		
 		Bukkit.getPluginManager().registerEvents(new MenuListener(this), this);
 		
 		Bukkit.getPluginManager().registerEvents(new Caps(this), this);
 		
 	}
 	
-	public void applyFastPassUI(Player player) {
+	public void applyCapsUI(Player player) {
 		
 		//Beginning
-		Inventory fastPassGUI = Bukkit.createInventory(null, 9, ChatColor.RED + "Caps");
+		Inventory CapsGUI = Bukkit.createInventory(null, 9, ChatColor.RED + "Caps");
 		
 		//Lores
 		
@@ -44,7 +47,10 @@ public class Main extends JavaPlugin{
 		
 		List<String> CapsLore = new ArrayList<>();
 		CapsLore.add(ChatColor.GRAY + "Click to Recive Caps Wand");  
-
+		
+		List<String> BoxLore = new ArrayList<>();
+	//	BoxLore.add(ChatColor.GRAY + "Click to open the Menu");
+		//BoxLore.add(ChatColor.GRAY + "To change your Cap");
 		
 		
 		//ItemStacks
@@ -88,9 +94,48 @@ public class Main extends JavaPlugin{
 		@SuppressWarnings("deprecation")
 		ItemStack RedStainedGlass = new ItemStack(Material.STAINED_GLASS_PANE,1,  DyeColor.RED.getDyeData());
 		ItemMeta RedStainedGlassMeta = RedStainedGlass.getItemMeta();
-		RedStainedGlassMeta.setDisplayName(ChatColor.BLUE + "Cap Change ->");
+		RedStainedGlassMeta.setDisplayName(ChatColor.BLUE + " ");
 		RedStainedGlass.setItemMeta(RedStainedGlassMeta);
 		
+		
+		ItemStack BOX = new ItemStack(Material.BED, 1);
+		ItemMeta BoxMeta = BOX.getItemMeta();
+		BoxMeta.setDisplayName(ChatColor.BLUE + "Cap Changer");
+		BOX.setItemMeta(BoxMeta);
+		BoxMeta.setLore(BoxLore);
+		
+		
+		//ItemSettings
+		
+		CapsGUI.setItem(0, caps);
+		CapsGUI.setItem(1, RedStainedGlass);
+		CapsGUI.setItem(2, StanedGlass);
+		CapsGUI.setItem(3, RedStainedGlass);
+		CapsGUI.setItem(4, ED);
+		CapsGUI.setItem(5, RedStainedGlass);
+		CapsGUI.setItem(6, StanedGlass);
+		CapsGUI.setItem(7, RedStainedGlass);
+		CapsGUI.setItem(8, BOX);
+
+		
+		
+		//Final
+		
+		player.openInventory(CapsGUI);
+		
+	}
+		
+
+	
+	public void applyChangerUI(Player player) {
+		
+		Inventory ChangerGUI = Bukkit.createInventory(null, 9, ChatColor.BLUE + "Caps Changer");
+		
+		@SuppressWarnings("deprecation")
+		ItemStack RedStainedGlass = new ItemStack(Material.STAINED_GLASS_PANE,1,  DyeColor.RED.getDyeData());
+		ItemMeta RedStainedGlassMeta = RedStainedGlass.getItemMeta();
+		RedStainedGlassMeta.setDisplayName(ChatColor.BLUE + " ");
+		RedStainedGlass.setItemMeta(RedStainedGlassMeta);
 		
 		ItemStack LEATHER_HELMET = new ItemStack(Material.LEATHER_HELMET, 1);
 		
@@ -102,24 +147,18 @@ public class Main extends JavaPlugin{
 		
 		ItemStack CHAINMAIL_HELMET = new ItemStack(Material.CHAINMAIL_HELMET, 1);
 		
-		
-		//ItemSettings
-		
-		fastPassGUI.setItem(0, caps);
-		fastPassGUI.setItem(1, ED);
-		fastPassGUI.setItem(2, StanedGlass);
-		fastPassGUI.setItem(3, RedStainedGlass);
-		fastPassGUI.setItem(4, LEATHER_HELMET);
-		fastPassGUI.setItem(5, DIAMOND_HELMET);
-		fastPassGUI.setItem(6, GOLD_HELMET);
-		fastPassGUI.setItem(7, IRON_HELMET);
-		fastPassGUI.setItem(8, CHAINMAIL_HELMET);
+		ChangerGUI.setItem(0, LEATHER_HELMET);
+		ChangerGUI.setItem(1, RedStainedGlass);
+		ChangerGUI.setItem(2, DIAMOND_HELMET);
+		ChangerGUI.setItem(3, RedStainedGlass);
+		ChangerGUI.setItem(4, GOLD_HELMET);
+		ChangerGUI.setItem(5, RedStainedGlass);
+		ChangerGUI.setItem(6, IRON_HELMET);
+		ChangerGUI.setItem(7, RedStainedGlass);
+		ChangerGUI.setItem(8, CHAINMAIL_HELMET);
 
-		
-		
-		//Final
-		
-		player.openInventory(fastPassGUI);
+		player.openInventory(ChangerGUI);
+
 		
 	}
 	
@@ -127,5 +166,7 @@ public class Main extends JavaPlugin{
 	public void onDisable() {
 		System.out.println("Magical Dreams: MWMCaps DISABLED");
 	}
+
+
 
 }
