@@ -4,7 +4,18 @@ MagicalDreams Hats “Made With Magic” plug-in
 -This is a in Dev plugin for the Minecraft Server "Magical Dreams"(Creating Walts Dream) which is currently going through referbishment.
 
 
-
+name: MWMCaps
+main: com.magicaldreams.madewithmagiccaps.Main
+version: 0.75.9
+api-version: 1.14
+database: false
+prefix: MWMCap
+author: Nolant108
+authors: [MagicalDreams]
+website: magicaldreams.us , github.com/nolant108
+description: (TESTING VERSION) The Caps Plugin for Magical Dreams
+commands:
+  cap:
 
 
 
