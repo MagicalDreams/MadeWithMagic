@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Disney FastPass GUI.iml" filepath="$PROJECT_DIR$/Disney FastPass GUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MadeWithMagic.iml" filepath="$PROJECT_DIR$/.idea/MadeWithMagic.iml" />
     </modules>
   </component>
 </project>

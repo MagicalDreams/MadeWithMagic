@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MDCaps">
+    <output-path>$USER_HOME$/Desktop/MagicalDreams Server/plugins/</output-path>
+    <root id="archive" name="MDCaps.jar">
+      <element id="library" level="project" name="spigot-1.14.4" />
+    </root>
+  </artifact>
+</component>
