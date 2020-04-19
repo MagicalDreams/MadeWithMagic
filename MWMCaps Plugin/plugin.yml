@@ -1,0 +1,6 @@
+name: MWMCaps
+main: com.magicaldreams.madewithmagiccaps.Main
+version: 0.1.0
+api-version: 1.14
+commands:
+  cap:
