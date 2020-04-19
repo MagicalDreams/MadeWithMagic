@@ -5,17 +5,17 @@ MagicalDreams Hats “Made With Magic” plug-in
 
 
 name: MWMCaps<br/>
-main: com.magicaldreams.madewithmagiccaps.Main
-version: 0.75.9
-api-version: 1.14
-database: false
-prefix: MWMCap
-author: Nolant108
-authors: [MagicalDreams]
-website: magicaldreams.us , github.com/nolant108
-description: (TESTING VERSION) The Caps Plugin for Magical Dreams
-commands:
-  cap:
+main: com.magicaldreams.madewithmagiccaps.Main<br/>
+version: 0.75.9<br/>
+api-version: 1.14<br/>
+database: false<br/>
+prefix: MWMCap<br/>
+author: Nolant108<br/>
+authors: [MagicalDreams]<br/>
+website: magicaldreams.us , github.com/nolant108<br/>
+description: (TESTING VERSION) The Caps Plugin for Magical Dreams<br/>
+commands:<br/>
+  cap:<br/>
 
 
 
