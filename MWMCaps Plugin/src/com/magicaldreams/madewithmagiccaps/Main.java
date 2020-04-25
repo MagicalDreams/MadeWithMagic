@@ -11,6 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -25,12 +26,24 @@ public class Main extends JavaPlugin{
         System.out.println("Magical Dreams: MWMCaps ENABLED");
 
         getCommand("cap").setExecutor(new FastPassCommand(this));
+        
+   //     getCommand("cap-diamond").setExecutor(new capdiamondCommand(this));
+        
+        getCommand("cap-gold").setExecutor(new capgoldCommand(this));
+        
+   //     getCommand("cap-leather").setExecutor(new capleatherCommand(this));
+
+//        getCommand("cap-chain").setExecutor(new capchainCommand(this));
+
+//        getCommand(null).setExecutor((this));
 
         Bukkit.getPluginManager().registerEvents(new MenuListener(this), this);
 
         Bukkit.getPluginManager().registerEvents(new Caps(this), this);
 
     }
+    
+    public HashMap<Player, Long> cooldown = new HashMap<>();
 
     public void applyCapsUI(Player player) {
 
@@ -58,7 +71,7 @@ public class Main extends JavaPlugin{
         ItemStack ED;
         ItemMeta EDMeta;
         if(player.getInventory().getHolder().getType() != null
-                && player.getInventory().getHolder().equals(Material.EMERALD_BLOCK)) {
+                && player.getInventory().getHolder().equals(Material.BONE)) {
 
 
 

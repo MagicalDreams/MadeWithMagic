@@ -12,13 +12,71 @@ import java.util.ArrayList;
 
 public class Caps implements Listener{
 	  ArrayList<Player> BONE = new ArrayList<>();
+	
+	
+    public Caps(Main main) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	@EventHandler
+    public void onClick(PlayerInteractEvent e) {
+    	
+    	Player player = e.getPlayer();
+    	
+    	if(player.getItemInHand().getType().equals(Material.BONE)) {
+    		
+    		if(BONE.contains(player)) {//is enabled
+    			
+    		player.sendMessage("Changed");
+    		BONE.remove(player);
+    		
+    		
+    		switch (e.getAction().LEFT_CLICK_AIR) {
+                    case LEFT_CLICK_BLOCK:
+
+
+                    //    player.getInventory().setHelmet((new ItemStack(Material.DIAMOND_HELMET, 1)));
+
+
+
+
+                        player.getInventory().setHelmet((new ItemStack(Material.GOLDEN_HELMET, 1)));
+
+
+
+                    //    player.getInventory().setHelmet((new ItemStack(Material.IRON_HELMET, 1)));
+
+                    
+
+                    //    player.getInventory().setHelmet((new ItemStack(Material.CHAINMAIL_HELMET, 1)));
+
+//
+                //        player.getInventory().setHelmet((new ItemStack(Material.LEATHER_HELMET, 1)));
+
+                        break;
+                    default:
+                        return;
+    		
+    		}   			
+    		
+    		
+    	}
+    	
+    }
+	
+	
+	  
+	  /*
 
 	    private Main main;
 
 	    public Caps(Main main) {
 	        this.main = main;
 	    }
-
+	    
+	    */
+/*
 	    @SuppressWarnings("deprecation")
 	    @EventHandler
 	    public void onClick(PlayerInteractEvent e) {
@@ -69,17 +127,10 @@ public class Caps implements Listener{
 
 	        }
 
-		/*
-		@EventHandler
-		public void onChat(AsyncPlayerChatEvent e) {
-
-			if(BONE.contains(e.getPlayer())) {
-				e.setCancelled(true);
-				e.getPlayer().sendMessage("Wand Disabled");
-			}
-
-		}
-		*/
-
+		
+	   
 	    }
+ */
+	   
 	}
+}

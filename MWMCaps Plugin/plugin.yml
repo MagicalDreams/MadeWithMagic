@@ -10,3 +10,4 @@ website: magicaldreams.us , github.com/nolant108
 description: (TESTING VERSION) The Caps Plugin for Magical Dreams
 commands:
   cap:
+  cap-gold:

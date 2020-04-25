@@ -19,6 +19,10 @@ public class MenuListener implements Listener{
 	    public MenuListener(Main main) {
 	        this.main = main;
 	    }
+	    
+	    public void CooldownCommand(Main main){
+	    	this.main = main;
+	    }
 
 	    @SuppressWarnings("deprecation")
 	    @EventHandler
@@ -32,11 +36,26 @@ public class MenuListener implements Listener{
 	                e.setCancelled(true);
 	                switch (e.getCurrentItem().getType()) {
 	                    case BONE:
-	                        ItemStack BONE = new ItemStack(Material.BONE,1);
+	                    	
+	                    	if(main.cooldown.containsKey(player) && main.cooldown.get(player) > System.currentTimeMillis()) {
+	                    		long longRemaining = main.cooldown.get(player) - System.currentTimeMillis();
+	                    		
+	                    		int intRemaining = (int) (longRemaining / 1000);
+	                    		
+	                    		player.sendMessage("You must wait " + intRemaining + " Seconds!");
+	                    		
+	                    	}else {
+	                    	
+	                    	main.cooldown.put(player, System.currentTimeMillis() + (10 * 100));
+	                    	
+	                    	ItemStack BONE = new ItemStack(Material.BONE,1);
 
 	                        player.getInventory().setItemInHand((new ItemStack(Material.BONE, 1)));
 
 	                        player.closeInventory();
+	                    	}
+	                    	
+
 
 	                        break;
 	                    case EMERALD_BLOCK:
@@ -67,6 +86,8 @@ public class MenuListener implements Listener{
 	                    default:
 	                        return;
 
+
+
 	                }
 
 	            }
@@ -82,7 +103,6 @@ public class MenuListener implements Listener{
 	                switch (e.getCurrentItem().getType()) {
 
 	                    case LEATHER_HELMET:
-	                        player.getInventory().setHelmet((new ItemStack(Material.LEATHER_HELMET, 1)));
 	                        ((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 2.0F, 1.0F);
 	                        player.closeInventory();
 	                        player.sendMessage(ChatColor.GRAY + "Changed Hat to: Cap");
@@ -107,7 +127,8 @@ public class MenuListener implements Listener{
 	                    case IRON_HELMET:
 	                        player.getInventory().setHelmet((new ItemStack(Material.IRON_HELMET, 1)));
 	                        ((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 2.0F, 1.0F);
-	                        player.closeInventory();					player.sendMessage(ChatColor.RED + "Changed Hat to: Jacks Hat");
+	                        player.closeInventory();					
+	                        player.sendMessage(ChatColor.RED + "Changed Hat to: Jacks Hat");
 
 	                    case CHAINMAIL_HELMET:
 	                        player.getInventory().setHelmet((new ItemStack(Material.CHAINMAIL_HELMET, 1)));
