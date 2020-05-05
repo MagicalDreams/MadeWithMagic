@@ -25,7 +25,7 @@ Copyright © 2020 Nolan Trapp
 
 Only Current Active Licence is for: © 2013-2020 MagicalDreams Server, and Nolant108(and required users)
 
-To recicve a licence, fill out this form:  https://forms.gle/k3uz6LUAWeyw1gzg9
+To recicve a licence, fill out this form:  https://forms.gle/NrGjkt4T4CrKnMgJ9
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
