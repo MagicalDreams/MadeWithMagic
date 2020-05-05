@@ -29,7 +29,6 @@ public class Main extends JavaPlugin{
         
    //     getCommand("cap-diamond").setExecutor(new capdiamondCommand(this));
         
-        getCommand("cap-gold").setExecutor(new capgoldCommand(this));
         
    //     getCommand("cap-leather").setExecutor(new capleatherCommand(this));
 
@@ -53,13 +52,16 @@ public class Main extends JavaPlugin{
         //Lores
 
         List<String> enableLore = new ArrayList<>();
+        enableLore.add(ChatColor.RED + "UNDER DEV");
         enableLore.add(ChatColor.GRAY + "Click Me to Enable Caps");
 
         List<String> disableLore = new ArrayList<>();
+        disableLore.add(ChatColor.RED + "UNDER DEV");
         disableLore.add(ChatColor.GRAY + "Click Me to Disable Caps");
 
 
         List<String> CapsLore = new ArrayList<>();
+        CapsLore.add(ChatColor.RED + "UNDER DEV");
         CapsLore.add(ChatColor.GRAY + "Click to Recive Caps Wand");
 
         List<String> BoxLore = new ArrayList<>();

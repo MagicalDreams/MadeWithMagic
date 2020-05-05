@@ -35,8 +35,9 @@ public class MenuListener implements Listener{
 	            if(e.getCurrentItem() != null) {
 	                e.setCancelled(true);
 	                switch (e.getCurrentItem().getType()) {
+	                
 	                    case BONE:
-	                    	
+	                   /* 	
 	                    	if(main.cooldown.containsKey(player) && main.cooldown.get(player) > System.currentTimeMillis()) {
 	                    		long longRemaining = main.cooldown.get(player) - System.currentTimeMillis();
 	                    		
@@ -55,7 +56,7 @@ public class MenuListener implements Listener{
 	                        player.closeInventory();
 	                    	}
 	                    	
-
+*/
 
 	                        break;
 	                    case EMERALD_BLOCK:
